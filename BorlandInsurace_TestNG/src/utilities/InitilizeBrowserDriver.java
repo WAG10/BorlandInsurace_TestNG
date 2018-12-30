@@ -12,15 +12,15 @@ public class InitilizeBrowserDriver {
 	
 	
 	
-	public static WebDriver InitlizeDriver() throws IOException 
+	public static  WebDriver InitlizeDriver() throws IOException 
 	{
 		
 		//String TestRunningon;
-		WebDriver driver=null;
+		WebDriver driver = null;
 		Properties prop = new Properties();
 		FileInputStream fs = new FileInputStream("E:\\Selenium\\projects\\BorlandInsurace_TestNG\\BrowserInit.properties");
 		prop.load(fs);
-		//TestRunningon=prop.getProperty("Browser").toLowerCase();
+		
 		
 		switch (prop.getProperty("Browser").toLowerCase())
 		{

@@ -52,7 +52,7 @@ public class CreateAutoQuoteTestNG {
 		driver.quit();
 	}
 
-	
+/*	
 	@Test
 	public void TestAutoQuote_TC_002() throws IOException, InterruptedException
 	{
@@ -147,7 +147,7 @@ public class CreateAutoQuoteTestNG {
 		AutoQuotePremiumPage.GetQuotePremium(driver);
 		Thread.sleep(3000);
 		driver.quit();
-	}
+	}*/
 
 
 	
