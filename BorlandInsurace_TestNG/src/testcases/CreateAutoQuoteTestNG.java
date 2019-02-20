@@ -3,6 +3,7 @@ package testcases;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -14,6 +15,7 @@ import pageObjects.AutoQuotefirstPage;
 import pageObjects.IndexPage;
 import utilities.GetDataFromExcel;
 import utilities.InitilizeBrowserDriver;
+import utilities.TakeScreeshot;
 
 public class CreateAutoQuoteTestNG {
 	
@@ -45,6 +47,8 @@ public class CreateAutoQuoteTestNG {
 		AutoQuoteThirdPage.Model(driver,GetDataFromExcel.GetCellValue("AutoQuoteThirdPage", "TC_001", "Model")).click();
 		AutoQuoteThirdPage.FinancialInfo(driver,GetDataFromExcel.GetCellValue("AutoQuoteThirdPage", "TC_001", "FinancialInfo")).click();
 		AutoQuoteThirdPage.NextButton(driver).click();
+		
+		TakeScreeshot.captureScreen(driver,"TC_001");
 		
 		AutoQuotePremiumPage.GetQuotePremium(driver);
 		
@@ -80,6 +84,11 @@ public class CreateAutoQuoteTestNG {
 		AutoQuoteThirdPage.FinancialInfo(driver,GetDataFromExcel.GetCellValue("AutoQuoteThirdPage", "TC_002", "FinancialInfo")).click();
 		AutoQuoteThirdPage.NextButton(driver).click();
 		
+		
+		TakeScreeshot.captureScreen(driver, GetDataFromExcel.GetCellValue("IndexPage", "TC_002", "TCName")+ ".png");
+		
+		TakeScreeshot.captureScreen(driver,"TC_002");
+		
 		AutoQuotePremiumPage.GetQuotePremium(driver);
 		Thread.sleep(3000);
 		driver.quit();
@@ -112,6 +121,8 @@ public class CreateAutoQuoteTestNG {
 		AutoQuoteThirdPage.FinancialInfo(driver,GetDataFromExcel.GetCellValue("AutoQuoteThirdPage", "TC_003", "FinancialInfo")).click();
 		AutoQuoteThirdPage.NextButton(driver).click();
 		
+		TakeScreeshot.captureScreen(driver,"TC_003");
+		
 		AutoQuotePremiumPage.GetQuotePremium(driver);
 		Thread.sleep(3000);
 		driver.quit();
@@ -143,6 +154,8 @@ public class CreateAutoQuoteTestNG {
 		AutoQuoteThirdPage.Model(driver,GetDataFromExcel.GetCellValue("AutoQuoteThirdPage", "TC_004", "Model")).click();
 		AutoQuoteThirdPage.FinancialInfo(driver,GetDataFromExcel.GetCellValue("AutoQuoteThirdPage", "TC_004", "FinancialInfo")).click();
 		AutoQuoteThirdPage.NextButton(driver).click();
+		
+		TakeScreeshot.captureScreen(driver,"TC_004");
 		
 		AutoQuotePremiumPage.GetQuotePremium(driver);
 		Thread.sleep(3000);
