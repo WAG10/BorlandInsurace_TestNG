@@ -5,7 +5,10 @@
     <classes>
       <class name="testcases.CreateAutoQuoteTestNG">
         <methods>
+          <include name="TestAutoQuote_TC_002"/>
+          <include name="TestAutoQuote_TC_001"/>
           <include name="TestAutoQuote_TC_004"/>
+          <include name="TestAutoQuote_TC_003"/>
         </methods>
       </class> <!-- testcases.CreateAutoQuoteTestNG -->
     </classes>
