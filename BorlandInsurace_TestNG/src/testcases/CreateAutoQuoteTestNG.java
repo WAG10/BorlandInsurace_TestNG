@@ -1,11 +1,15 @@
 package testcases;
 
 import java.io.IOException;
+import java.util.Base64;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import pageObjects.AutoQuotePremiumPage;
@@ -19,7 +23,7 @@ import utilities.TakeScreeshot;
 
 public class CreateAutoQuoteTestNG {
 	
-	
+	public static Logger log= LogManager.getLogger(Base64.class.getName());
 	
 	@Test
 	public void TestAutoQuote_TC_001() throws IOException, InterruptedException
@@ -28,6 +32,7 @@ public class CreateAutoQuoteTestNG {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("http://demo.borland.com/InsuranceWebExtJS/");
 		driver.manage().window().maximize();
+		log.info("url opened and maximized");
 		
 		Select s = new Select(IndexPage.ServiceLogindropdown(driver));
 		s.selectByVisibleText(GetDataFromExcel.GetCellValue("IndexPage","TC_001","ActionDropdown"));
@@ -93,6 +98,7 @@ public class CreateAutoQuoteTestNG {
 		Thread.sleep(3000);
 		driver.quit();
 	}
+	
 	
 	@Test
 	public void TestAutoQuote_TC_003() throws IOException, InterruptedException
